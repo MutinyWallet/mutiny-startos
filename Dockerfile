@@ -24,7 +24,7 @@ WORKDIR /app
 
 RUN apt update && apt install -y git python3 make build-essential
 
-RUN git clone --branch prod https://github.com/MutinyWallet/mutiny-web .
+RUN git clone --b v0.4.21 https://github.com/MutinyWallet/mutiny-web .
 
 # This is the cooler way to run pnpm these days (no need to npm install it)
 RUN corepack enable
@@ -61,7 +61,7 @@ COPY --from=rust-builder /build/ln-websocket-proxy/target/release/ln_websocket_p
 COPY --from=web-builder /app/dist/public /usr/share/nginx/html
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY start.sh /app/start.sh
+COPY docker_entrypoint.sh /app/docker_entrypoint.sh
 
 EXPOSE 80
 
@@ -70,4 +70,4 @@ STOPSIGNAL SIGINT
 ENV DATABASE_URL="postgres://postgres:docker@localhost/vss"
 ENV SELF_HOST="true"
 
-CMD ["/app/start.sh"]
+CMD ["/app/docker_entrypoint.sh"]
