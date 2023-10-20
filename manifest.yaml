@@ -85,12 +85,12 @@ interfaces:
     tor-config:
       # Port mappings are from the external port to the internal container port
       port-mapping:
-        80: "8080"
+        80: "80"
     # Port mappings are from the external port to the internal container port
     lan-config:
       443:
         ssl: true
-        internal: 8080
+        internal: 80
     # Denotes if the service has a user interface to display
     ui: true
     # Denotes the protocol specifications used by this interface
