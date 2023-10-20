@@ -1,0 +1,10 @@
+
+[submodule "mutiny-web"]
+	path = mutiny-web
+	url = https://github.com/MutinyWallet/mutiny-web.git
+[submodule "ln-websocket-proxy"]
+	path = ln-websocket-proxy
+	url = https://github.com/MutinyWallet/ln-websocket-proxy
+[submodule "vss-rs"]
+	path = vss-rs
+	url = https://github.com/MutinyWallet/vss-rs

@@ -6,6 +6,11 @@ RUST_LOG=debug
   POSTGRES_DATADIR="/var/lib/postgresql/15"
   POSTGRES_CONFIG="/etc/postgresql/15"
 
+  # Pulling this in from Dockerfile
+  # IDK why but it gets mad if you don't do this
+  git config --global --add safe.directory /app
+  pnpm run build
+
   #Start and Configure PostgreSQL
   echo 'Starting PostgreSQL database server for the first time...'
   chown -R postgres:postgres $POSTGRES_DATADIR
