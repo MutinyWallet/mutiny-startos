@@ -1,17 +1,15 @@
 FROM rust:1.72.0-bookworm AS rust-builder
 
-WORKDIR /build
+COPY ./vss-rs ./build/vss-rs
+COPY ./ln-websocket-proxy ./build/ln-websocket-proxy
 
 RUN apt update && apt install -y git python3 make build-essential clang cmake libsnappy-dev openssl libpq-dev pkg-config libc6
 
 # Install vss-rs
-RUN git clone -b v0.1.0 https://github.com/MutinyWallet/vss-rs
 WORKDIR /build/vss-rs
 RUN cargo build --release
 
-WORKDIR /build
 # Install ln-websocket-proxy
-RUN git clone -b v0.3.1 https://github.com/MutinyWallet/ln-websocket-proxy
 WORKDIR /build/ln-websocket-proxy
 RUN cargo build --release --features="server"
 
@@ -20,11 +18,11 @@ FROM node:20-slim AS web-builder
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 
+COPY ./mutiny-web /app
+
 WORKDIR /app
 
 RUN apt update && apt install -y git python3 make build-essential
-
-RUN git clone --b v0.4.21 https://github.com/MutinyWallet/mutiny-web .
 
 # This is the cooler way to run pnpm these days (no need to npm install it)
 RUN corepack enable
@@ -39,12 +37,10 @@ ARG VITE_RGS
 ARG VITE_AUTH
 ARG VITE_STORAGE="/_services/vss/v2"
 ARG VITE_SELFHOSTED="true"
+ARG VITE_COMMIT_HASH="unknown"
 
 # Install dependencies
 RUN pnpm install --frozen-lockfile
-
-# IDK why but it gets mad if you don't do this
-RUN git config --global --add safe.directory /app
 
 # Build the static site
 RUN pnpm run build
@@ -61,7 +57,7 @@ COPY --from=rust-builder /build/ln-websocket-proxy/target/release/ln_websocket_p
 COPY --from=web-builder /app/dist/public /usr/share/nginx/html
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
-COPY docker_entrypoint.sh /app/docker_entrypoint.sh
+ADD ./docker_entrypoint.sh /usr/local/bin/docker_entrypoint.sh
 
 EXPOSE 80
 
@@ -69,5 +65,3 @@ STOPSIGNAL SIGINT
 
 ENV DATABASE_URL="postgres://postgres:docker@localhost/vss"
 ENV SELF_HOST="true"
-
-CMD ["/app/docker_entrypoint.sh"]
