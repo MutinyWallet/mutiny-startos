@@ -65,7 +65,16 @@ main:
     # Specifies where on the service's file system its persistence directory should be mounted prior to service startup
     main: /root
 # This is where health checks would be defined - see a more advanced example in https://github.com/Start9Labs/start-pages-wrapper
-health-checks: {}
+health-checks:
+  main:
+    name: Web UI
+    success-message: Mutiny is ready to visit in a web browser
+    type: docker
+    image: main
+    entrypoint: check-web.sh
+    args: [ ]
+    io-format: json
+    inject: true
 config: ~
 properties: ~
 #  type: script
