@@ -9,4 +9,3 @@ This comes pre-packaged with VSS and the websocket proxy, so everything you need
 The only external dependency is esplora, which is used to get blockchain data. This can be configured in the settings
 page if you have your own esplora instance running.
 
-## Additional instructions TBD
