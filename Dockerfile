@@ -59,6 +59,9 @@ COPY --from=web-builder /app/dist/public /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 ADD ./docker_entrypoint.sh /usr/local/bin/docker_entrypoint.sh
 
+ADD ./check-web.sh /usr/local/bin/check-web.sh
+RUN chmod +x /usr/local/bin/check-web.sh
+
 EXPOSE 80
 
 STOPSIGNAL SIGINT
