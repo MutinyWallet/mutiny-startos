@@ -5,9 +5,13 @@ id: mutiny-wallet
 # A human readable service title
 title: "Mutiny Wallet"
 # Service version - accepts up to four digits, where the last confirms to revisions necessary for StartOS - see documentation: https://github.com/Start9Labs/emver-rs. This value will change with each release of the service.
-version: 0.4.21
+version: 0.4.32
 # Release notes for the update - can be a string, paragraph or URL
-release-notes: "Initial release"
+release-notes: |
+  - Improvements to wallet startup time
+  - Additions to prevent force closes
+  - Better handling of high on-chain fees
+  - Bug fixes
 # The type of license for the project. Include the LICENSE in the root of the project directory. A license is required for a Start9 package.
 license: mit
 # The Start9 wrapper repository URL for the package. This repo contains the manifest file (this), any scripts necessary for configuration, backups, actions, or health checks (more below). This key must exist. But could be embedded into the source repository.
@@ -19,7 +23,7 @@ support-site: "https://matrix.to/#/#mutiny-community:lightninghackers.com/"
 # URL to the marketing site for the project. This key can be omitted if none exists, or it can link to the original project repository.
 marketing-site: "https://mutinywallet.com/"
 # The series of commands to build the project into an s9pk for arm64/v8. In this case we are using a Makefile with the simple build command "make".
-build: ["idk"]
+build: ["make"]
 # Human readable descriptors for the service. These are used throughout the StartOS user interface, primarily in the marketplace.
 description:
   # This is the first description visible to the user in the marketplace.
