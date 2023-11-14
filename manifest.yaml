@@ -127,13 +127,12 @@ backup:
       - duplicity
       - create
       - /mnt/backup
-      # For duplicity, the backup mount point needs to be something other than `/root`, so we default to `/root/data`
-      - /root/data
+      - /var/lib/postgresql
     mounts:
       # BACKUP is the default volume that is used for backups. This is whatever backup drive is mounted to the device, or a network filesystem.
       # The value here donates where the mount point will be. The backup drive is mounted to this location.
       BACKUP: "/mnt/backup"
-      main: "/root/data"
+      main: "/var/lib/postgresql"
   # The action to execute the backup restore functionality. Details for the keys below are the same as above.
   restore:
     type: docker
@@ -144,10 +143,10 @@ backup:
       - duplicity
       - restore
       - /mnt/backup
-      - /root/data
+      - /var/lib/postgresql
     mounts:
       BACKUP: "/mnt/backup"
-      main: "/root/data"
+      main: "/var/lib/postgresql"
 migrations:
   from:
     "*":
