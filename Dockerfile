@@ -1,7 +1,5 @@
 FROM rust:1.72.0-bookworm AS rust-builder
 
-ENV CARGO_NET_GIT_FETCH_WITH_CLI true
-
 COPY ./vss-rs ./build/vss-rs
 COPY ./ln-websocket-proxy ./build/ln-websocket-proxy
 
