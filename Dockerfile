@@ -1,5 +1,7 @@
 FROM rust:1.72.0-bookworm AS rust-builder
 
+ENV CARGO_NET_GIT_FETCH_WITH_CLI true
+
 COPY ./vss-rs ./build/vss-rs
 COPY ./ln-websocket-proxy ./build/ln-websocket-proxy
 
@@ -47,7 +49,7 @@ RUN pnpm run build
 
 FROM nginx:bookworm
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends git python3 make build-essential clang cmake libsnappy-dev openssl libpq-dev pkg-config libc6 postgresql-common postgresql-15 && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends postgresql-15 && rm -rf /var/lib/apt/lists/*
 
 # Copy binaries
 COPY --from=rust-builder /build/vss-rs/target/release/vss-rs /app/vss-rs
