@@ -14,7 +14,7 @@ verify: $(PKG_ID).s9pk
 
 install:
 ifeq (,$(wildcard ~/.embassy/config.yaml))
-	@echo; echo "You must define \"host: http://start-server-name.local\" in ~/.embassy/config.yaml config file first"; echo
+	@echo; echo "You must define \"host: http://server-name.local\" in ~/.embassy/config.yaml config file first"; echo
 else
 	start-cli package install $(PKG_ID).s9pk
 endif
@@ -23,22 +23,6 @@ clean:
 	rm -rf docker-images
 	rm -f $(PKG_ID).s9pk
 	rm -f scripts/*.js
-	rm -f image.tar
-
-clean-manifest:
-	@sed -i '' '/^[[:blank:]]*#/d;s/#.*//' manifest.yaml
-	@echo; echo "Comments successfully removed from manifest.yaml file."; echo
-
-# BEGIN REBRANDING
-rebranding:
-	@read -p "Enter new package ID name (must be a single word): " NEW_PKG_ID; \
-	read -p "Enter new package title: " NEW_PKG_TITLE; \
-	find . \( -name "*.md" -o -name ".gitignore" -o -name "manifest.yaml" -o -name "*Service.yml" \) -type f -not -path "./mutiny-startos/*" -exec sed -i '' -e "s/mutiny-startos/$$NEW_PKG_ID/g; s/Mutiny/$$NEW_PKG_TITLE/g" {} +; \
-	echo; echo "Rebranding complete."; echo "	New package ID name is:	$$NEW_PKG_ID"; \
-	echo "	New package title is:	$$NEW_PKG_TITLE"; \
-	sed -i '' -e '/^# BEGIN REBRANDING/,/^# END REBRANDING/ s/^#*/#/' Makefile
-	@echo; echo "Note: Rebranding code has been commented out in Makefile"; echo
-# END REBRANDING
 
 scripts/embassy.js: $(TS_FILES)
 	deno bundle scripts/embassy.ts scripts/embassy.js
