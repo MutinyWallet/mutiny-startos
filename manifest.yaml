@@ -12,8 +12,10 @@ release-notes: |
   - Additions to prevent force closes
   - Better handling of high on-chain fees
   - Bug fixes
+  - Standardized and optimized icon
+  - Reduced package size by 63%
 # The type of license for the project. Include the LICENSE in the root of the project directory. A license is required for a Start9 package.
-license: mit
+license: MIT
 # The Start9 wrapper repository URL for the package. This repo contains the manifest file (this), any scripts necessary for configuration, backups, actions, or health checks (more below). This key must exist. But could be embedded into the source repository.
 wrapper-repo: "https://github.com/benthecarman/mutiny-startos"
 # The original project repository URL. There is no upstream repo in this example

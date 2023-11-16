@@ -1,10 +1,12 @@
-# Wrapper for Mutiny 
+<p align="center">
+  <img src="icon.png" alt="Project Logo" width="21%">
+</p>
 
-Mutiny Wallet is a lightning wallet that runs in the web. Mutiny is unlike other lightning apps on Start9, it is not a
-server that you run on your Embassy. Instead, it is a web app that you can access from any device on your local network.
-This means that you can access your wallet from your phone, tablet, or laptop.
+# Mutiny Wallet for StartOS 
 
-This repository creates the `s9pk` package that is installed to run `Mutiny` on [StartOS](https://github.com/Start9Labs/start-os/). Learn more about service packaging in the [Developer Docs](https://start9.com/latest/developer-docs/).
+[Mutiny Wallet](https://github.com/MutinyWallet/mutiny-web) is a lightning wallet that runs in the web. Unlike other lightning services on Start9, it is not a server that you run on StartOS. Instead, it is a web app that you can access from any device on your local network. This means that you can access your wallet from your phone, tablet, or laptop.
+
+This repository creates the `s9pk` package that is installed to run `Mutiny Wallet` on [StartOS](https://github.com/Start9Labs/start-os/). Learn more about service packaging in the [Developer Docs](https://start9.com/latest/developer-docs/).
 
 ## Dependencies
 
@@ -15,7 +17,7 @@ Install the system dependencies below to build this project by following the ins
 - [yq](https://mikefarah.gitbook.io/yq)
 - [deno](https://deno.land/)
 - [make](https://www.gnu.org/software/make/)
-- [start-sdk](https://github.com/Start9Labs/start-os/tree/master/backend)
+- [start-sdk](https://github.com/Start9Labs/start-os/tree/sdk/backend)
 
 ## Build environment
 Prepare your StartOS build environment. In this example we are using Ubuntu 20.04.
