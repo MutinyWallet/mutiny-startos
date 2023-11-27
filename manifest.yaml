@@ -12,8 +12,10 @@ release-notes: |
   - Additions to prevent force closes
   - Better handling of high on-chain fees
   - Bug fixes
+  - Standardized and optimized icon
+  - Reduced package size by 63%
 # The type of license for the project. Include the LICENSE in the root of the project directory. A license is required for a Start9 package.
-license: mit
+license: MIT
 # The Start9 wrapper repository URL for the package. This repo contains the manifest file (this), any scripts necessary for configuration, backups, actions, or health checks (more below). This key must exist. But could be embedded into the source repository.
 wrapper-repo: "https://github.com/benthecarman/mutiny-startos"
 # The original project repository URL. There is no upstream repo in this example
@@ -67,7 +69,7 @@ main:
   # Specifies where to mount the data volume(s), if there are any. Mounts for pointer dependency volumes are also denoted here. These are necessary if data needs to be read from / written to these volumes.
   mounts:
     # Specifies where on the service's file system its persistence directory should be mounted prior to service startup
-    postgres: "/var/lib/postgresql"
+    main: "/var/lib/postgresql"
 # This is where health checks would be defined - see a more advanced example in https://github.com/Start9Labs/start-pages-wrapper
 health-checks:
   main:
@@ -85,7 +87,7 @@ properties: ~
 # This denotes any data, asset, or pointer volumes that should be connected when the "docker run" command is invoked
 volumes:
   # This is the image where files from the project asset directory will go
-  postgres:
+  main:
     type: data
 # This specifies how to configure the port mapping for exposing the service over TOR and LAN (if applicable). Many interfaces can be specified depending on the needs of the service. If it can be launched over a Local Area Network connection, specify a `lan-config`. Otherwise, at minimum, a `tor-config` must be specified.
 interfaces:
@@ -132,7 +134,7 @@ backup:
       # BACKUP is the default volume that is used for backups. This is whatever backup drive is mounted to the device, or a network filesystem.
       # The value here donates where the mount point will be. The backup drive is mounted to this location.
       BACKUP: "/mnt/backup"
-      postgres: "/var/lib/postgresql"
+      main: "/var/lib/postgresql"
   # The action to execute the backup restore functionality. Details for the keys below are the same as above.
   restore:
     type: docker
@@ -146,7 +148,7 @@ backup:
       - /var/lib/postgresql
     mounts:
       BACKUP: "/mnt/backup"
-      postgres: "/var/lib/postgresql"
+      main: "/var/lib/postgresql"
 migrations:
   from:
     "*":
