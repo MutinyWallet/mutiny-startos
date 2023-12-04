@@ -47,7 +47,7 @@ RUN pnpm run build
 
 FROM nginx:bookworm
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends postgresql-15 && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends postgresql-15 && rm -rf /var/lib/apt/lists/* && mv /var/lib/postgresql/15/main /var/lib/
 
 # Copy binaries
 COPY --from=rust-builder /build/vss-rs/target/release/vss-rs /app/vss-rs

@@ -8,6 +8,8 @@ RUST_LOG=debug
 
   #Start and Configure PostgreSQL
   echo 'Starting PostgreSQL database server for the first time...'
+  mkdir -p $POSTGRES_DATADIR $POSTGRES_CONFIG
+  mv /var/lib/main $POSTGRES_DATADIR
   chown -R postgres:postgres $POSTGRES_DATADIR
   chown -R postgres:postgres $POSTGRES_CONFIG
   chmod -R 700 $POSTGRES_DATADIR
@@ -30,9 +32,9 @@ RUST_LOG=debug
   echo 'Granting db permissions...'
   su - postgres -c 'psql -c "grant all privileges on database '$POSTGRES_DB' to '$POSTGRES_USER';"'
   echo 'Creating .pgpass file...'
-  su - postgres -c 'echo "localhost:5432:'$POSTGRES_USER':'$POSTGRES_PASSWORD'" >> .pgpass'
-  su - postgres -c "chmod -R 0600 .pgpass"
-  chmod -R 0600 /var/lib/postgresql/.pgpass
+  echo "localhost:5432:'$POSTGRES_USER':'$POSTGRES_PASSWORD'" > $POSTGRES_DATADIR/../.pgpass
+  chmod -R 0600 $POSTGRES_DATADIR/../.pgpass
+  chown postgres:postgres $POSTGRES_DATADIR/../.pgpass
 
 /app/vss-rs &
 /app/ln-websocket-proxy &
