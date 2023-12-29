@@ -1,11 +1,15 @@
 
 id: mutiny-wallet
 title: "Mutiny Wallet"
-version: 0.4.39-1
+version: 0.5.0
 release-notes: |
-  - Dynamic Channel Fees, setting up your channels should be cheaper now
-  - General backend improvements
-  - Bug fixes
+  - Experimental support for Fedimint
+  - Experimental support for Multiple LSPs using the LSPS spec
+  - Increase on-chain gap limit when resyncing
+  - Better multi-device support
+  - Removed unused redshifts page
+  - Bug fix: Fix issue where nostr contacts would not be able to sync
+  - Bug fix: Fix issue with gifting not working on self-hosted instances
 license: MIT
 wrapper-repo: "https://github.com/benthecarman/mutiny-startos"
 upstream-repo: "https://github.com/MutinyWallet/mutiny-web"
