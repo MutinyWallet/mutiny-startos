@@ -27,3 +27,9 @@ your own.
 4. Backup your seed phrase. This is the only way to recover your funds if you lose access to your wallet. Settings ->
    Backup -> Tap to Reveal Seed Words
 5. Send funds to your wallet by clicking the receive button sending to the on-chain address or lightning invoice.
+
+## Caveats
+
+If you try to restore your existing Mutiny Wallet to a self-hosted instance, your lightning channels will not be
+restored. If you want to restore your lightning channels you will need to export state from your original wallet and
+import it into your new self-hosted instance. The tools for this exist in the Emergency kit in the Settings page.
