@@ -1,16 +1,12 @@
 
 id: mutiny-wallet
 title: "Mutiny Wallet"
-version: 0.5.1
+version: 0.5.3
 release-notes: |
-  - Experimental support for Fedimint
-  - Experimental support for Multiple LSPs using the LSPS spec
-  - Increase on-chain gap limit when resyncing
-  - Better multi-device support
-  - Removed unused redshifts page
-  - Better address gap management
-  - Bug fix: Fix issue where nostr contacts would not be able to sync
-  - Bug fix: Fix issue with gifting not working on self-hosted instances
+  - New Send UI!
+  - Improved bitcoin price api, more currencies added
+  - Bug fixes with lightning connectivity
+  - Bug fixes with syncing nostr contacts
 license: MIT
 wrapper-repo: "https://github.com/benthecarman/mutiny-startos"
 upstream-repo: "https://github.com/MutinyWallet/mutiny-web"
