@@ -1,12 +1,11 @@
 
 id: mutiny-wallet
 title: "Mutiny Wallet"
-version: 0.5.3
+version: 0.5.5
 release-notes: |
-  - New Send UI!
-  - Improved bitcoin price api, more currencies added
-  - Bug fixes with lightning connectivity
-  - Bug fixes with syncing nostr contacts
+  - Migrates fedimint storage, if you have a fedimint balance currently, please withdraw the funds first. Lightning is unaffected.
+  - Optimizations to nostr contact syncing & send page
+  - Better handling of expired invoices
 license: MIT
 wrapper-repo: "https://github.com/benthecarman/mutiny-startos"
 upstream-repo: "https://github.com/MutinyWallet/mutiny-web"
