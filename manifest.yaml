@@ -1,11 +1,12 @@
 
 id: mutiny-wallet
 title: "Mutiny Wallet"
-version: 0.5.5
+version: 0.5.7
 release-notes: |
-  - Migrates fedimint storage, if you have a fedimint balance currently, please withdraw the funds first. Lightning is unaffected.
-  - Optimizations to nostr contact syncing & send page
-  - Better handling of expired invoices
+  - Versions before 0.5.5: Migrates fedimint storage, if you have a fedimint balance currently, please withdraw the funds first. Lightning is unaffected.
+  - Adds sending payjoin support
+  - Improvements to NWC handling
+  - Better warnings for hodl invoices
 license: MIT
 wrapper-repo: "https://github.com/benthecarman/mutiny-startos"
 upstream-repo: "https://github.com/MutinyWallet/mutiny-web"
