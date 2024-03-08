@@ -1,11 +1,11 @@
 
 id: mutiny-wallet
 title: "Mutiny Wallet"
-version: 0.5.9
+version: 0.5.10
 release-notes: |
-  - Updated LDK & BDK (will resync on chain funds, give it a minute or two)
-  - Faster startup time
-  - Language switcher in settings
+  - Fixes some bugs in fedimint that prevented joining some federations.
+  - Fixes a rare race condition when creating a lightning node
+  - Updates lightning-liquidity to the alpha release
 license: MIT
 wrapper-repo: "https://github.com/benthecarman/mutiny-startos"
 upstream-repo: "https://github.com/MutinyWallet/mutiny-web"
