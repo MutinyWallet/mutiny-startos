@@ -1,11 +1,9 @@
 
 id: mutiny-wallet
 title: "Mutiny Wallet"
-version: 0.5.10
+version: 0.6.1
 release-notes: |
-  - Fixes some bugs in fedimint that prevented joining some federations.
-  - Fixes a rare race condition when creating a lightning node
-  - Updates lightning-liquidity to the alpha release
+  - New social design! Read about it here: https://blog.mutinywallet.com/mutiny-new-design-people-oriented/
 license: MIT
 wrapper-repo: "https://github.com/benthecarman/mutiny-startos"
 upstream-repo: "https://github.com/MutinyWallet/mutiny-web"
