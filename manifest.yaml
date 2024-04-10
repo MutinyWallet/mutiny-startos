@@ -1,9 +1,11 @@
 
 id: mutiny-wallet
 title: "Mutiny Wallet"
-version: 0.6.1
+version: 0.6.3
 release-notes: |
-  - New social design! Read about it here: https://blog.mutinywallet.com/mutiny-new-design-people-oriented/
+  - Bug fixes
+  - Improved performance
+  - Update to fedimint v0.3.0
 license: MIT
 wrapper-repo: "https://github.com/benthecarman/mutiny-startos"
 upstream-repo: "https://github.com/MutinyWallet/mutiny-web"
