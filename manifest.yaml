@@ -6,6 +6,7 @@ release-notes: |
   - Bug fixes
   - Improved performance
   - Update to fedimint v0.3.0
+  - Display proper commit hash in settings
 license: MIT
 wrapper-repo: "https://github.com/benthecarman/mutiny-startos"
 upstream-repo: "https://github.com/MutinyWallet/mutiny-web"

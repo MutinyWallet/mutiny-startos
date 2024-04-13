@@ -38,7 +38,7 @@ ARG VITE_RGS
 ARG VITE_AUTH
 ARG VITE_STORAGE="/_services/vss/v2"
 ARG VITE_SELFHOSTED="true"
-ARG VITE_COMMIT_HASH="unknown"
+ARG VITE_COMMIT_HASH
 
 # Install dependencies
 RUN pnpm install --frozen-lockfile
@@ -46,7 +46,7 @@ RUN pnpm install --frozen-lockfile
 # Build the static site
 RUN pnpm run build
 
-FROM nginx:bookworm
+FROM nginxproxy/docker-gen:0.12.0-debian
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends postgresql-15 && rm -rf /var/lib/apt/lists/* && mv /var/lib/postgresql/15/main /var/lib/
 
