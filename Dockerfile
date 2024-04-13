@@ -46,7 +46,7 @@ RUN pnpm install --frozen-lockfile
 # Build the static site
 RUN pnpm run build
 
-FROM nginxproxy/docker-gen:0.12.0-debian
+FROM nginx:bookworm
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends postgresql-15 && rm -rf /var/lib/apt/lists/* && mv /var/lib/postgresql/15/main /var/lib/
 
