@@ -1,12 +1,10 @@
 
 id: mutiny-wallet
 title: "Mutiny Wallet"
-version: 0.6.3
+version: 0.6.5
 release-notes: |
   - Bug fixes
-  - Improved performance
-  - Update to fedimint v0.3.0
-  - Display proper commit hash in settings
+  - Better DM handling
 license: MIT
 wrapper-repo: "https://github.com/benthecarman/mutiny-startos"
 upstream-repo: "https://github.com/MutinyWallet/mutiny-web"
