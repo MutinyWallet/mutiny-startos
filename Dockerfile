@@ -38,7 +38,7 @@ ARG VITE_RGS
 ARG VITE_AUTH
 ARG VITE_STORAGE="/_services/vss/v2"
 ARG VITE_SELFHOSTED="true"
-ARG VITE_COMMIT_HASH="unknown"
+ARG VITE_COMMIT_HASH="dc239c1a47c2076e00c4f6c4f9f0aae810705802"
 
 # Install dependencies
 RUN pnpm install --frozen-lockfile
