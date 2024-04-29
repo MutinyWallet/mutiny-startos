@@ -1,10 +1,10 @@
 
 id: mutiny-wallet
 title: "Mutiny Wallet"
-version: 0.6.5
+version: 0.6.8
 release-notes: |
+  - Improve performance
   - Bug fixes
-  - Better DM handling
 license: MIT
 wrapper-repo: "https://github.com/benthecarman/mutiny-startos"
 upstream-repo: "https://github.com/MutinyWallet/mutiny-web"
