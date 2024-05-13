@@ -1,8 +1,10 @@
 
 id: mutiny-wallet
 title: "Mutiny Wallet"
-version: 0.6.8
+version: 1.7.1
 release-notes: |
+  - On chain fedimint support
+  - Swapping between federations
   - Improve performance
   - Bug fixes
 license: MIT

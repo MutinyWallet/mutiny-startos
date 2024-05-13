@@ -1,3 +1,3 @@
 import { compat, types as T } from "../deps.ts";
 
-export const migration: T.ExpectedExports.migration = compat.migrations.fromMapping({}, "0.6.8");
+export const migration: T.ExpectedExports.migration = compat.migrations.fromMapping({}, "1.7.1");
