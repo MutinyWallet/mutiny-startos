@@ -10,7 +10,7 @@ release-notes: |
 license: MIT
 wrapper-repo: "https://github.com/benthecarman/mutiny-startos"
 upstream-repo: "https://github.com/MutinyWallet/mutiny-web"
-support-site: "https://matrix.to/#/#mutiny-community:lightninghackers.com/"
+support-site: "https://discord.gg/x3njeHUjVd"
 marketing-site: "https://mutinywallet.com/"
 build: ["make"]
 description:
