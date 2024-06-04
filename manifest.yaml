@@ -1,11 +1,9 @@
 
 id: mutiny-wallet
 title: "Mutiny Wallet"
-version: 1.7.1
+version: 1.7.4
 release-notes: |
-  - On chain fedimint support
-  - Swapping between federations
-  - Improve performance
+  - New Translations for Italian, Chinese, and German
   - Bug fixes
 license: MIT
 wrapper-repo: "https://github.com/benthecarman/mutiny-startos"
