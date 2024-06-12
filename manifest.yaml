@@ -1,10 +1,9 @@
 
 id: mutiny-wallet
 title: "Mutiny Wallet"
-version: 1.7.4
+version: 1.7.8
 release-notes: |
-  - New Translations for Italian, Chinese, and German
-  - Bug fixes
+  - Bug fixes to prevent force-closes and crashes
 license: MIT
 wrapper-repo: "https://github.com/benthecarman/mutiny-startos"
 upstream-repo: "https://github.com/MutinyWallet/mutiny-web"
