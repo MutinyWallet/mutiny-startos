@@ -68,7 +68,7 @@ Now you are ready to build the `mutiny` package!
 Clone the project locally:
 
 ```
-git clone https://github.com/benthecarman/mutiny-startos.git
+git clone https://github.com/MutinyWallet/mutiny-startos.git
 cd mutiny-startos
 git submodule update --init --recursive
 ```

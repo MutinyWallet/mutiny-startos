@@ -7,7 +7,7 @@ release-notes: |
   - New LSP option
   - Bug fixes
 license: MIT
-wrapper-repo: "https://github.com/benthecarman/mutiny-startos"
+wrapper-repo: "https://github.com/MutinyWallet/mutiny-startos"
 upstream-repo: "https://github.com/MutinyWallet/mutiny-web"
 support-site: "https://discord.gg/x3njeHUjVd"
 marketing-site: "https://mutinywallet.com/"
