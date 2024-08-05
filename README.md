@@ -117,3 +117,23 @@ make install
 Go to your StartOS Services page, select **Mutiny**, configure and start the service. Then, verify its interfaces are accessible.
 
 **Done!** 
+
+## Updating (for maintainers)
+
+To update for a new release of mutiny-web, you'll need to update the `mutiny-web` submodule and the `manifest.yaml` and `migrations.ts` files.
+
+1. Update the `mutiny-web` submodule to the latest commit
+```
+cd mutiny-startos
+git fetch --all
+git checkout <tag of new release>
+```
+
+2. Update the `manifest.yaml` and `migrations.ts` files to the new version
+3. Update release notes in `manifest.yaml`
+4. Commit changes
+5. Tag new release of `mutiny-startos`, this will trigger a new build of the `mutiny-startos` package in CI
+```
+git tag <tag of new release>
+git push origin <tag of new release>
+```
